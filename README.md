@@ -1,6 +1,10 @@
 **Pre 1.16 Findings**
 
-Switch 
+North/South rule: 1.818738\
+East/West rule: 0.961536\
+Switch Z sign, then East/West rule: 0.814782\
+Optimal rule: (WIP, Finishing up Optimal algorithm)
+
 
 **1.16.1 Findings**
 
