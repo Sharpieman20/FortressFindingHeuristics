@@ -1,15 +1,10 @@
-This repository tests out various Nether Fortress Search Algorithms
+**Pre 1.16 Findings**
 
-Speedrunners familiar with Pre 1.16 running are familiar with the "East/West" rule. It posits that because fortresses spawn in strips that are oriented from North to South, one should travel east or west from their spawn location in order to find a fortress as quickly as possible.
+Switch 
 
-This repository contains code to test this "rule" against other potential rules, such as a "North/South rule", as well as an "Optimal rule". It does this by randomly selecting a portal location in the (-1, -1), (-1, 0), (0, -1), and (0,0) regions and applying the rule from there, checking if there is a fortress in the region or not. Then it calculates the number of regions "walked" from the portal and back (assuming you take the same exact path back and don't shortcut). This is the "cost" associated with traveling for a given seed.
+**1.16.1 Findings**
 
-The average distances per algorithm are as follows:
-
-North/South rule: 1.818738\
-East/West rule: 0.961536\
-Switch Z, then East/West rule: 0.814782\
-Optimal rule: (WIP, Finishing up Optimal algorithm)
-
-From time to time I might attempt to make various improvements to this repository, if anyone is interested in helping out just let me know.
-These include attempting to account for terrain navigation cost tradeoffs, visibility of fortresses, and writing an in-game bot to test the algorithms in practical circumstances.
+For inter-region navigation (every 432 x 432 blocks), straight East is slightly better than every other direction.
+The biggest effect of direction is traveling back towards origin is bad, but even this is not hugely significant.
+However, in general for 1.16, the effects of which cardinal direction you run (in terms of inter-regional travel) is rather negligible.
+It is potentially even faster than running straight East to run diagonally in any direction than traveling straight east, but only if you're truly running diagonally and not East for a bit, North for a bit, etc.. 

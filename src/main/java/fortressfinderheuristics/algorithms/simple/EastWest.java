@@ -19,10 +19,8 @@ public class EastWest extends Algorithm {
         }
     }
 
-    public Position getNextPos() {
+    protected void updatePos() {
 
         curPos.x += step;
-
-        return curPos;
     }
 }

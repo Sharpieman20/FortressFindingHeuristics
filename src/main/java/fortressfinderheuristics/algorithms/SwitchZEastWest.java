@@ -18,7 +18,7 @@ public class SwitchZEastWest extends Algorithm {
         visited = new HashSet<Position>();
     }
 
-    public Position getNextPos() {
+    protected void updatePos() {
 
         visited.add(curPos);
 
@@ -55,9 +55,5 @@ public class SwitchZEastWest extends Algorithm {
                 curPos.x -= 1;
             }
         }
-
-        
-
-        return curPos;
     }
 }

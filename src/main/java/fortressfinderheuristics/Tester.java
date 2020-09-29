@@ -5,35 +5,22 @@ package fortressfinderheuristics;
 import fortressfinderheuristics.algorithms.*;
 
 public class Tester {
-    public static double scoreAlgorithm(Algorithm algo) {
+    public static int scoreAlgorithm(Algorithm algo) {
 
         Nether nether = Settings.world.nether;
 
         // boolean[][] fortMatrix = nether.searchAroundOrigin();
 
-        double dist = -1;
+        int dist = 0;
 
         boolean didFind = false;
 
-        Position pos = Settings.world.getSpawn();
-
-        
-
-        algo.setPos(pos);
-
-        do {
-
-            didFind = nether.checkIfInRegion(pos);
-
-            algo.giveResult(didFind);
-
-            pos = algo.getNextPos();
-
-            // System.out.println(pos);
+        while(dist < Settings.SEARCH_DEPTH && !nether.hasFortressInRegion(algo.curPos)) {
 
             dist++;
 
-        } while(!didFind);
+            algo.doStep();
+        }
 
         dist *= 2;
 

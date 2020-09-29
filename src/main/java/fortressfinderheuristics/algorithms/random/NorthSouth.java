@@ -19,10 +19,8 @@ public class NorthSouth extends Algorithm {
         }
     }
 
-    public Position getNextPos() {
+    protected void updatePos() {
 
         curPos.z += step;
-
-        return curPos;
     }
 }

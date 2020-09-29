@@ -15,12 +15,15 @@ public class World {
 
         seed = Settings.rand.nextLong();
 
-        nether = new Nether();
+        nether = new Nether(this);
 
-        int x = (int) (-1*(Math.abs(Settings.rand.nextLong()) % 2));
-        int z = (int) (-1*(Math.abs(Settings.rand.nextLong()) % 2));
+        int x = (int) (Math.random() * 2);
+        int z = (int) (Math.random() * 2);
 
-        spawn = new Position(x,z);
+        x *= -1;
+        z *= -1;
+
+        spawn = Position.get(x,z);
     }
 
     public Position getSpawn() {

@@ -1,0 +1,35 @@
+RandomWalk Avg: 1.5363256
+East Only: 1.318882
+Optimal: 1.316682
+
+10_000_000
+
+
+
+
+
+100_000_000
+East: 1.31751454
+
+
+REALISTIC
+RandomWalk:      1.5119318
+RandomDirection: 1.507298
+MostlyZigZag:    1.35088
+MostlyEastNorth: 1.3296492
+MostlyEast:      1.328692
+MostlyEastSouth: 1.328632
+
+
+THEORETICAL
+South:      1.3352744
+North:      1.3345606
+West:       1.333123
+ZigZag:     1.323314
+East:       1.3164868
+Optimal:    1.3159662
+
+
+
+IMPOSSIBLE
+
