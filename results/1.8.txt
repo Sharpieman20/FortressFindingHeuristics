@@ -1,4 +1,6 @@
-North/South rule: 1.818738\
-East/West rule: 0.961536\
-Switch Z sign, then East/West rule: 0.814782\
-Optimal rule: (WIP, Finishing up Optimal algorithm)
+North/South rule: 1.150266\
+RandomWalk: 1.135734\
+East/West rule: 1.026582\
+East: 1.02898\
+EastUnlessQuadrant: 0.93996\
+Optimal rule: 0.936496\

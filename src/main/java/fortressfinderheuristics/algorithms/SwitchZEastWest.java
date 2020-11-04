@@ -11,9 +11,9 @@ public class SwitchZEastWest extends Algorithm {
 
     int step = 1;
 
-    public void setPos(Position pos) {
+    public void reset(Position pos) {
 
-        super.setPos(pos);
+        super.reset(pos);
 
         visited = new HashSet<Position>();
     }

@@ -2,6 +2,7 @@
 package fortressfinderheuristics;
 
 import kaptainwutax.featureutils.structure.Fortress;
+import kaptainwutax.featureutils.structure.Bastion;
 import kaptainwutax.seedutils.mc.ChunkRand;
 import kaptainwutax.seedutils.mc.MCVersion;
 import kaptainwutax.seedutils.mc.pos.CPos;
@@ -15,10 +16,18 @@ import java.util.Collections;
 
 public class Nether {
 
+    public enum Structures {
+
+        Fortress,
+        Bastion
+    }
+
     private World world;
     private Fortress f = new Fortress(Settings.version);
+    private Bastion b = new Bastion(Settings.version);
 
-    boolean[][] fortressLocs; 
+    boolean[][] fortressLocs;
+    boolean[][] bastionLocs;
     PositionInfoStore posConverter;
 
     public Nether(World world) {
@@ -28,6 +37,27 @@ public class Nether {
         posConverter = new PositionInfoStore(-Settings.SEARCH_DEPTH);
 
         searchAroundOrigin();
+    }
+
+    public boolean hasStructureInRegion(int x, int z) {
+
+        if (Settings.STRUCTURE == Nether.Structures.Fortress) {
+
+            return hasFortressInRegion(x, z);
+        } else if (Settings.STRUCTURE = Nether.Structures.Bastion) {
+
+            return hasBastionInRegion(x, z);
+        }
+
+        return false;
+    }
+
+    public boolean hasBastionInRegion(int x, int z) {
+
+        int i = posConverter.convertXToIndex(x);
+        int j = posConverter.convertZToIndex(z);
+
+        return bastionLocs[i][j];
     }
 
     public boolean hasFortressInRegion(int x, int z) {
@@ -55,8 +85,18 @@ public class Nether {
         return isInRegion == null;
     }
 
+    private boolean hasBastionInRegionInner(int x, int z) {
+
+        CPos isInRegion;
+
+        isInRegion = b.getInRegion(world.seed, x, z, new ChunkRand());
+
+        return isInRegion == null;
+    }
+
     public void searchAroundOrigin() {
 
+        bastionLocs = new boolean[posConverter.getSize()][posConverter.getSize()];
         fortressLocs = new boolean[posConverter.getSize()][posConverter.getSize()];
 
         for (Position pos : posConverter.exploreAll()) {
@@ -67,6 +107,7 @@ public class Nether {
             // System.out.println(i + " " + j);
 
             fortressLocs[i][j] = hasFortressInRegionInner(pos.x, pos.z);
+            bastionLocs[i][j] = hasFortressInRegionInner(pos.x, pos.z);
         }
     }
 }

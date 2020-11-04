@@ -14,15 +14,23 @@ public class Tester {
         int dist = 0;
 
         boolean didFind = false;
+        // System.out.println("-----------------------------");
 
         while(dist < Settings.SEARCH_DEPTH && !nether.hasFortressInRegion(algo.curPos)) {
+
+            // System.out.println(algo.curPos);
 
             dist++;
 
             algo.doStep();
         }
 
+        // System.out.println(algo.curPos);
+
         dist *= 2;
+
+        // System.out.println("dist " + dist);
+        // System.out.println("-----------------------------");
 
         return dist;
     }

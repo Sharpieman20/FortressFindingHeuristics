@@ -43,7 +43,7 @@ public class PositionDatabase {
                     int i = posConverter.convertXToIndex(x);
                     int j = posConverter.convertZToIndex(z);
 
-                    fortressLocations[w][i][j] = world.nether.hasFortressInRegion(x, z);
+                    fortressLocations[w][i][j] = world.nether.hasStructureInRegion(x, z);
                 }
             }
         }
