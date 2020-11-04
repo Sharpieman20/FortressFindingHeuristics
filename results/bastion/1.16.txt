@@ -1,0 +1,22 @@
+10_000_000
+
+REALISTIC
+RandomWalk:      0.00000
+RandomDirection: 0.00000
+MostlyZigZag:    0.00000
+MostlyEastNorth: 0.00000
+MostlyEast:      0.00000
+MostlyEastSouth: 0.00000
+
+
+THEORETICAL
+South:      1.2492606
+North:      1.2500044
+West:       1.2401368
+ZigZag:     0.00000
+East:       1.2407468
+Optimal:    1.2398744
+
+
+IMPOSSIBLE
+Perfect:    0.9427778

@@ -16,7 +16,7 @@ public class Tester {
         boolean didFind = false;
         // System.out.println("-----------------------------");
 
-        while(dist < Settings.SEARCH_DEPTH && !nether.hasFortressInRegion(algo.curPos)) {
+        while(dist < Settings.SEARCH_DEPTH && !nether.hasStructureInRegion(algo.curPos)) {
 
             // System.out.println(algo.curPos);
 

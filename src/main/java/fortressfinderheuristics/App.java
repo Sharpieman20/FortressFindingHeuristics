@@ -20,7 +20,7 @@ import java.awt.*;
 public class App {
     public static void main(String[] args) {
 
-        Algorithm mine = new West();
+        Algorithm mine = new East();
 
         if (mine.usesPositionDatabase()) {
 

@@ -2,7 +2,7 @@
 package fortressfinderheuristics;
 
 import kaptainwutax.featureutils.structure.Fortress;
-import kaptainwutax.featureutils.structure.Bastion;
+import kaptainwutax.featureutils.structure.BastionRemnant;
 import kaptainwutax.seedutils.mc.ChunkRand;
 import kaptainwutax.seedutils.mc.MCVersion;
 import kaptainwutax.seedutils.mc.pos.CPos;
@@ -16,7 +16,7 @@ import java.util.Collections;
 
 public class Nether {
 
-    public enum Structures {
+    public enum Structure {
 
         Fortress,
         Bastion
@@ -24,7 +24,7 @@ public class Nether {
 
     private World world;
     private Fortress f = new Fortress(Settings.version);
-    private Bastion b = new Bastion(Settings.version);
+    private BastionRemnant b = new BastionRemnant(Settings.version);
 
     boolean[][] fortressLocs;
     boolean[][] bastionLocs;
@@ -41,10 +41,10 @@ public class Nether {
 
     public boolean hasStructureInRegion(int x, int z) {
 
-        if (Settings.STRUCTURE == Nether.Structures.Fortress) {
+        if (Settings.STRUCTURE == Nether.Structure.Fortress) {
 
             return hasFortressInRegion(x, z);
-        } else if (Settings.STRUCTURE = Nether.Structures.Bastion) {
+        } else if (Settings.STRUCTURE == Nether.Structure.Bastion) {
 
             return hasBastionInRegion(x, z);
         }
@@ -72,9 +72,9 @@ public class Nether {
         return fortressLocs[i][j];
     }
 
-    public boolean hasFortressInRegion(Position pos) {
+    public boolean hasStructureInRegion(Position pos) {
 
-        return hasFortressInRegion(pos.x, pos.z);
+        return hasStructureInRegion(pos.x, pos.z);
     }
 
     private boolean hasFortressInRegionInner(int x, int z) {
@@ -82,7 +82,7 @@ public class Nether {
 
         isInRegion = f.getInRegion(world.seed, x, z, new ChunkRand());
 
-        return isInRegion == null;
+        return isInRegion != null;
     }
 
     private boolean hasBastionInRegionInner(int x, int z) {
@@ -91,7 +91,7 @@ public class Nether {
 
         isInRegion = b.getInRegion(world.seed, x, z, new ChunkRand());
 
-        return isInRegion == null;
+        return isInRegion != null;
     }
 
     public void searchAroundOrigin() {
@@ -107,7 +107,7 @@ public class Nether {
             // System.out.println(i + " " + j);
 
             fortressLocs[i][j] = hasFortressInRegionInner(pos.x, pos.z);
-            bastionLocs[i][j] = hasFortressInRegionInner(pos.x, pos.z);
+            bastionLocs[i][j] = hasBastionInRegionInner(pos.x, pos.z);
         }
     }
 }

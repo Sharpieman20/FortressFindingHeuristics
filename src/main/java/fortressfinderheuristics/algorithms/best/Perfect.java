@@ -70,7 +70,7 @@ public class Perfect extends Algorithm {
 
         // System.out.println("START " + visited + " " + pos);
 
-        if (!Settings.world.nether.hasFortressInRegion(pos)) {
+        if (!Settings.world.nether.hasStructureInRegion(pos)) {
 
             visited.add(pos);
 
