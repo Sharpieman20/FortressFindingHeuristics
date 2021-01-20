@@ -27,7 +27,7 @@ public class Tester {
 
         // System.out.println(algo.curPos);
 
-        dist *= 2;
+        // dist *= 2;
 
         // System.out.println("dist " + dist);
         // System.out.println("-----------------------------");

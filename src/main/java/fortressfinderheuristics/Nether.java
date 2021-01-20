@@ -82,6 +82,8 @@ public class Nether {
 
         isInRegion = f.getInRegion(world.seed, x, z, new ChunkRand());
 
+        // if (f.canStart())
+
         return isInRegion != null;
     }
 

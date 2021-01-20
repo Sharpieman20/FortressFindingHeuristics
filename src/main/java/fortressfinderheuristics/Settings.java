@@ -13,12 +13,13 @@ public class Settings {
     public static World world;
 
     public static MCVersion version = MCVersion.v1_16_1;
+    // public static MCVersion version = MCVersion.v1_8_9;
     public static Nether.Structure STRUCTURE = Nether.Structure.Fortress;
 
-    public static final int SEARCH_DEPTH = 3;
+    public static final int SEARCH_DEPTH = 1;
     public static int NUM_WORLDS = 10_000_000;
     // public static int NUM_WORLDS = 10;
-    public static int NUM_INIT_LOOPS = 10_000_000;
+    public static int NUM_INIT_LOOPS = 1_000_000;
 
     public static Color hasFortress = Color.RED;
     public static Color noFortress = Color.BLACK;

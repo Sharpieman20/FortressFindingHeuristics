@@ -20,7 +20,7 @@ import java.awt.*;
 public class App {
     public static void main(String[] args) {
 
-        Algorithm mine = new East();
+        Algorithm mine = new Unmoving();
 
         if (mine.usesPositionDatabase()) {
 
@@ -29,9 +29,8 @@ public class App {
             System.out.println("Initialization complete!");
         }
 
-        
-
         ArrayList<Double> scores = new ArrayList<Double>();
+        ArrayList<Long> seedsBelowScore = new ArrayList<Long>();
 
         double total = 0;
         int max = 0;
@@ -46,7 +45,7 @@ public class App {
 
             double score = Tester.scoreAlgorithm(mine);
 
-            if (score == 16.0) {
+            if (score == 1.0) {
 
                 max++;
             }
@@ -68,7 +67,7 @@ public class App {
 
         double thirtiethPercentile = scores.get(Settings.NUM_WORLDS / 3);
 
-        System.out.println(String.format("%.2f",100*((double)max) / Settings.NUM_WORLDS)+"%");
+        System.out.println(String.format("%.2f",100*((double)max) / Settings.NUM_WORLDS)+"% failed");
         System.out.println(total);
 
         double avg = total / Settings.NUM_WORLDS;

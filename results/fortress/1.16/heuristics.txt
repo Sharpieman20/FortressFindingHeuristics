@@ -1,0 +1,24 @@
+
+ITERS: 10_000_000
+SEARCH_DEPTH: 3
+
+REALISTIC
+RandomWalk:      0.00000
+RandomDirection: 0.00000
+MostlyZigZag:    0.00000
+MostlyEastNorth: 0.00000
+MostlyEast:      0.00000
+MostlyEastSouth: 0.00000
+
+
+THEORETICAL
+South:      0.00000
+North:      0.00000
+West:       0.00000
+ZigZag:     0.00000
+East:       0.00000
+Optimal:    2.3406538
+
+
+IMPOSSIBLE
+Perfect:    1.771558

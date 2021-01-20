@@ -1,0 +1,11 @@
++ + (aka 0 0)
+40.00% had fortress
+
++ - (aka 0 -1)
+40.02% had fortress
+
+- - (aka -1 -1)
+39.99% had fortress
+
+- + (aka -1 0)
+40.03% had fortress

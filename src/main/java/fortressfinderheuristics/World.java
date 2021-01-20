@@ -17,11 +17,14 @@ public class World {
 
         nether = new Nether(this);
 
-        int x = (int) (Math.random() * 2);
-        int z = (int) (Math.random() * 2);
+        // int x = (int) (Math.random() * 2);
+        // int z = (int) (Math.random() * 2);
 
-        x *= -1;
-        z *= -1;
+        // x *= -1;
+        // z *= -1;
+
+        int x = 0;
+        int z = 0;
 
         spawn = Position.get(x,z);
     }
